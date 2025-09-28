@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Rostex';
+  src: url('./assets/fonts/rostex/Rostex-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-rostex: "Rostex", sans-serif;
+}
+
