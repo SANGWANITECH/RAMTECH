@@ -1,17 +1,21 @@
 import './App.css'
-import { NavBar } from './NavBar'
-import { Hero } from './Hero'
-import Services from './Services'
-import Footer1 from './Footer1'
+import AboutUs from './components/AboutUs'
+
+import HeaderHero from './components/HeaderHero'
+import Services from './components/Services'
+import Contact from './components/Contact'
+
 
 function App() {
   
   return (
     <>
-       <NavBar/>
-       <Hero/>
+       <HeaderHero/>
+       <AboutUs/>
        <Services/>
-       <Footer1/>
+       <Contact/>
+       
+       
     </>
   )
 }

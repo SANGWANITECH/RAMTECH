@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+/* fonts.css */
+@font-face {
+  font-family: "Nico Moji";
+  src: url("/path/to/NicoMoji-Regular.ttf") format("truetype");
+}
+.font-nico {
+  font-family: "Nico Moji", sans-serif;
+}
