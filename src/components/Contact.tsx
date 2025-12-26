@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
       style={{ backgroundImage: "url('/cont.jpg')" }}
     >
       {/* Dark overlay for fading */}
-      <div className="absolute inset-0 bg-black/90"></div>
+      <div className="absolute inset-0 bg-black/80"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
         {/* Title */}
@@ -31,6 +31,13 @@ const Contact: React.FC = () => {
         {/* Contact Grid */}
         <div className="grid md:grid-cols-4 gap-6 text-left">
           {/* Phone 1 */}
+          <div className="flex items-center space-x-3">
+            <span className="bg-red-600 p-3 rounded-full">
+              <Phone className="w-5 h-5" />
+            </span>
+            <p>+265 (0) 998837985</p>
+          </div>
+
           <div className="flex items-center space-x-3">
             <span className="bg-red-600 p-3 rounded-full">
               <Phone className="w-5 h-5" />

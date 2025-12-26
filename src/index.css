@@ -9,3 +9,7 @@
   --font-rostex: "Rostex", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+

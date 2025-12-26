@@ -4,14 +4,14 @@ const AboutUs: React.FC = () => {
   const team = [
     {
       name: "Sangwani Phiri",
-      role: ["Software Engineer", "Instructor"],
+      role: ["Software Engineer", "security analyst"],
       img: "/ram1.jpg",
-      desc: "Visionary founder with expertise in software development, full-stack engineering, and digital education."
+      desc: "Visionary founder with expertise in software development, full-stack engineering, and cybersecurity education."
     },
     {
       name: "Arthur Nkhoma",
       role: ["Network Engineer", "Instructor"],
-      img: "/ram2.png",
+      img: "/ram2.jpg",
       desc: "Specialist in network engineering and IT infrastructure, building secure systems while mentoring youth."
     },
     {
@@ -36,9 +36,9 @@ const AboutUs: React.FC = () => {
           </h2>
         </div>
         <p className="text-gray-700 leading-relaxed text-base md:text-lg">
-          RamTech is a <span className="font-semibold text-red-700">youth-led tech movement</span> 
+          RamTech is a <span className="font-semibold text-red-700">youth-led tech movement </span> 
           founded by three <strong>University of Malawi</strong> students:  
-          <span className="font-medium"> Sangwani Phiri</span>, a Computer Science student passionate about software engineering and innovation;  
+          <span className="font-medium"> Sangwani Phiri</span>, a Computer Science student passionate about software engineering and cybersecurity;  
           <span className="font-medium"> Arthur Nkhoma</span>, a Computer Science student with a strong focus on networking and IT infrastructure; and  
           <span className="font-medium"> Mossam Banda</span>, a Network Engineering student specializing in cybersecurity and digital safety.  
           <br /><br />
