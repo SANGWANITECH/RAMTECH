@@ -15,7 +15,7 @@ const AboutUs: React.FC = () => {
       desc: "Specialist in network engineering and IT infrastructure, building secure systems while mentoring youth."
     },
     {
-      name: "Mossam Banda",
+      name: "Moses Samuel",
       role: ["Security Analyst", "Instructor"],
       img: "/ram3.jpg",
       desc: "Focused on cybersecurity and digital safety, guiding students to adopt secure digital practices."

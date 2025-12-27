@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const OurExpirience = () => {
   const projects = [
@@ -13,7 +14,7 @@ const OurExpirience = () => {
     {
       title: "TNT COLLECTION",
       description:
-        "The RamTech developer team developed an e-commerce web system for TNT Collection.",
+        "The RamTech developer team developed an e-commerce website management system for TNT Collection.",
       logos: ["/tnt.jpg"],
       link: "https://tnt-collection.store"
     },
@@ -28,6 +29,20 @@ const OurExpirience = () => {
 
   return (
     <div className="min-h-screen bg-white py-8 md:py-4 px-4">
+      {/* Helmet metadata for this section */}
+      <Helmet>
+        <title>RamTech Projects | Our Experience</title>
+        <meta
+          name="description"
+          content="Check out RamTech's projects and see how we empower youth with digital skills through real-world applications."
+        />
+        <meta property="og:title" content="RamTech Projects | Our Experience" />
+        <meta property="og:description" content="Check out RamTech's projects and see how we empower youth with digital skills through real-world applications." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ram-tech.netlify.app/#portfolio" />
+        <meta property="og:image" content="https://ram-tech.netlify.app/logo.png" />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 mb-10">
           <div className="w-1 h-10 bg-red-600" />
@@ -72,25 +87,19 @@ const OurExpirience = () => {
                   {project.description}
                 </p>
 
+                {/* Animated button */}
                 <motion.a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-red-500 text-white font-medium py-3 px-4 rounded-lg flex items-center justify-center gap-2 text-sm md:text-base"
                   animate={{ scale: [1, 1.05, 1] }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  whileHover={{
-                    scale: 1.12,
-                    backgroundColor: "#dc2626"
-                  }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.12, backgroundColor: "#dc2626" }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Visit the site
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </motion.a>
               </div>
             </div>
