@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import logoSrc from "../assets/logo.png";
 import hero1 from "../assets/hero1.jpg";
 
 const HeaderHero = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Advanced nav link style with underline animation
   const navClass =
     "relative px-3 py-1 rounded-md transition-all duration-300 " +
     "hover:bg-red-600 hover:text-white " +
@@ -27,31 +25,33 @@ const HeaderHero = () => {
       <div className="absolute inset-0 bg-black/70 z-0" />
 
       {/* Header */}
-      <header className="absolute top-0 left-0 w-full z-20">
+      <header className="fixed top-0 left-0 w-full z-20 bg-gray-950">
         <div
           className="md:mx-8 md:mt-6 md:px-6 px-4 py-3 flex items-center justify-between
                      bg-white/10 backdrop-blur-sm border border-white/20 rounded-md md:rounded-lg"
         >
-          {/* Left links (desktop only) */}
+          {/* Left nav */}
           <nav className="hidden md:flex space-x-10 text-white font-medium text-sm">
             <a href="#home" className={navClass}>Home</a>
             <a href="#services" className={navClass}>Solutions</a>
             <a href="#portfolio" className={navClass}>Projects</a>
           </nav>
 
-          {/* Logo */}
+          {/* TEXT LOGO */}
           <div className="flex-shrink-0">
-            <img src={logoSrc} alt="RamTech Logo" className="h-7 md:h-9" />
+            <h1 className="text-xl md:text-2xl font-bold tracking-widest text-white">
+              RAM<span className="text-red-600">TECH</span>
+            </h1>
           </div>
 
-          {/* Right links (desktop only) */}
+          {/* Right nav */}
           <nav className="hidden md:flex space-x-10 text-white font-medium text-sm">
             <a href="#about" className={navClass}>About Us</a>
             <a href="#testimonials" className={navClass}>Testimonials</a>
             <a href="#contact" className={navClass}>Contact Us</a>
           </nav>
 
-          {/* Mobile menu toggle */}
+          {/* Mobile toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-white text-3xl"
@@ -110,8 +110,14 @@ const HeaderHero = () => {
           href="https://wa.me/265998837985?text=Hello%20RamTech"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-block bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition"
-          whileHover={{ scale: 1.1 }}
+          className="mt-6 inline-block bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700"
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          whileHover={{ scale: 1.2 }}
         >
           Hire us →
         </motion.a>

@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 function Works_With() {
   const email = "sangwantech23@gmail.com";
@@ -48,13 +49,15 @@ function Works_With() {
               </p>
             </div>
 
-            {/* Button */}
-            <a
+            {/* Animated Button */}
+            <motion.a
               href={`mailto:${email}?subject=${subject}&body=${body}`}
-              className="px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition-colors text-sm md:text-base"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition-all text-sm md:text-base"
             >
               Send Email
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>

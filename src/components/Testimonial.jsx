@@ -6,7 +6,7 @@ function Testimonial() {
 
   const testimonials = [
     {
-      name: "Leilah Gondwe",
+      name: "Leilah khonje",
       rating: 5,
       image: "leilah.jpg",
       text:
@@ -23,7 +23,7 @@ function Testimonial() {
       name: "Mwai Zamadunga",
       rating: 5,
       image:
-        "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "mwa.jpg",
       text:
         "I am a student at the University of Malawi. I had no programming knowledge until RamTech offered coding lessons. The sessions completely transformed my skills."
     }

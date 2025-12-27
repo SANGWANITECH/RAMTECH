@@ -1,104 +1,74 @@
-import { ArrowRight } from "lucide-react";
+import { Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
-const OurExpirience = () => {
-  const projects = [
-    {
-      title: "The UTM Website",
-      description:
-        "The RamTech dev team developed a comprehensive website system for the UTM party.",
-      logos: ["/UTM.png"],
-      link: "https://utm-website-eight.vercel.app"
-    },
-    {
-      title: "TNT COLLECTION",
-      description:
-        "The RamTech developer team developed an e-commerce website management system for TNT Collection.",
-      logos: ["/tnt.jpg"],
-      link: "https://tnt-collection.store"
-    },
-    {
-      title: "Lost and Found",
-      description:
-        "The RamTech team built a lost and found application where students can access lost items.",
-      logos: ["/lost.png"],
-      link: "#"
-    }
-  ];
+function Works_With() {
+  const email = "sangwantech23@gmail.com";
+  const subject = "Working with RamTech";
+  const body =
+    "Hello RamTech Team,%0D%0A%0D%0AI am interested in working with you. Please let me know how we can collaborate.%0D%0A%0D%0AThank you.";
 
   return (
-    <div className="min-h-screen bg-white py-8 md:py-4 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-8 md:mb-10 gap-4">
-          <div>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-1 h-8 md:h-10 bg-red-600"></div>
-              <h1
-                className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900"
-                style={{ fontFamily: "'Orbitron', sans-serif" }}
-              >
-                Our Experience / Projects
-              </h1>
-            </div>
-          </div>
-        </div>
+    <div className="bg-white py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="border border-gray-200 rounded-xl p-6 md:p-10">
 
-        {/* Projects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-1 h-10 bg-red-600" />
+            <h1
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900"
+              style={{ fontFamily: "'Orbitron', sans-serif" }}
             >
-              {/* Logos */}
-              <div className="bg-gray-200 h-40 md:h-48 flex items-center justify-center gap-4 p-4">
-                {project.logos.map((logo, i) => (
-                  <div
-                    key={i}
-                    className="w-28 h-28 md:w-36 md:h-36 bg-white rounded-md overflow-hidden flex items-center justify-center"
-                  >
-                    <img
-                      src={logo}
-                      alt="Project logo"
-                      className={`w-full h-full ${
-                        logo.includes("unim") || logo.includes("lost")
-                          ? "object-cover"
-                          : "object-contain"
-                      }`}
-                    />
-                  </div>
-                ))}
-              </div>
+              Work With Us
+            </h1>
+          </div>
 
-              {/* Content */}
-              <div className="p-5 md:p-6">
-                <h3
-                  className="text-base md:text-lg font-bold text-gray-900 mb-2"
-                  style={{ fontFamily: "'Orbitron', sans-serif" }}
-                >
-                  {project.title}
-                </h3>
+          <p className="text-sm md:text-base text-gray-600 max-w-3xl mb-10 ml-4">
+            We are <span className="font-semibold text-gray-900">RamTech</span> — a
+            youth-driven tech startup focused on building real-world digital
+            solutions and empowering students with practical tech skills.
+            If you want to collaborate, build, or grow with us, let’s talk.
+          </p>
 
-                <p className="text-[15px] md:text-sm text-gray-600 leading-relaxed mb-4">
-                  {project.description}
-                </p>
-
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-red-400 hover:bg-red-500 text-white font-medium py-2.5 md:py-3 px-4 rounded-lg transition-colors text-sm md:text-base flex items-center justify-center gap-2 group"
-                >
-                  Visit the site
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+            
+            <div className="w-14 h-14 bg-red-500 rounded-full flex items-center justify-center">
+              <Mail className="w-7 h-7 text-white" />
             </div>
-          ))}
+
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                Let’s build something meaningful
+              </h3>
+              <p className="text-sm text-gray-600">
+                Send us an email and we’ll get back to you as soon as possible.
+              </p>
+            </div>
+
+            {/* SAME animation style as Visit Site */}
+            <motion.a
+              href={`mailto:${email}?subject=${subject}&body=${body}`}
+              className="px-8 py-3 bg-red-500 text-white font-medium rounded-full flex items-center justify-center text-sm md:text-base"
+              animate={{
+                scale: [1, 1.05, 1]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              whileHover={{
+                scale: 1.12,
+                backgroundColor: "#dc2626"
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Send Email
+            </motion.a>
+          </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default OurExpirience;
+export default Works_With;
