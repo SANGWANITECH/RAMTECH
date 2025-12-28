@@ -10,15 +10,15 @@ const AboutUs: React.FC = () => {
     },
     {
       name: "Arthur Nkhoma",
-      role: ["Network Engineer", "Instructor"],
+      role: ["software engineer", "Instructor"],
       img: "/ram2.jpg",
-      desc: "Specialist in network engineering and IT infrastructure, building secure systems while mentoring youth."
+      desc: "Specialist in software engineering and IT infrastructure, building secure systems while mentoring youth."
     },
     {
       name: "Moses Samuel",
-      role: ["Security Analyst", "Instructor"],
+      role: ["Network engineer", "Instructor"],
       img: "/ram3.jpg",
-      desc: "Focused on cybersecurity and digital safety, guiding students to adopt secure digital practices."
+      desc: " Network engineering student specializing in network security and IT infrastructure, with a focus on bulding a secure and reliable networks."
     }
   ];
 
@@ -38,9 +38,9 @@ const AboutUs: React.FC = () => {
         <p className="text-gray-700 leading-relaxed text-base md:text-lg">
           RamTech is a <span className="font-semibold text-red-700">youth-led tech movement </span> 
           founded by three <strong>University of Malawi</strong> students:  
-          <span className="font-medium"> Sangwani Phiri</span>, a Computer Science student passionate about software engineering and cybersecurity;  
-          <span className="font-medium"> Arthur Nkhoma</span>, a Computer Science student with a strong focus on networking and IT infrastructure; and  
-          <span className="font-medium"> Mossam Banda</span>, a Network Engineering student specializing in cybersecurity and digital safety.  
+          <span className="font-medium"> Sangwani Phiri</span>, a Computer Science student passionate about software engineering and cybersecurity, 
+          <span className="font-medium"> Arthur Nkhoma</span>, a Computer Science student with a strong focus on networking and IT infrastructure and  
+          <span className="font-medium"> Moses Samuel</span>, a Network Engineering student specializing in cybersecurity and digital safety.  
           <br /><br />
           Together, they built RamTech to empower young people with <strong>digital skills, mentorship, and practical training</strong> in areas like web and mobile development, networking, and cybersecurity.  
           The movement’s mission is to bridge the gap between academic learning and industry practice while driving <strong>digital transformation across Malawi and beyond</strong>.
