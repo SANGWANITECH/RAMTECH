@@ -10,13 +10,13 @@ const AboutUs: React.FC = () => {
     },
     {
       name: "Arthur Nkhoma",
-      role: ["software engineer", "Instructor"],
+      role: ["Software Engineer", "Instructor"],
       img: "/ram2.jpg",
       desc: "Specialist in software engineering and IT infrastructure, building secure systems while mentoring youth."
     },
     {
       name: "Moses Samuel",
-      role: ["Network engineer", "Instructor"],
+      role: ["Network Engineer", "Instructor"],
       img: "/ram3.jpg",
       desc: " Network engineering student specializing in network security and IT infrastructure, with a focus on bulding a secure and reliable networks."
     }
