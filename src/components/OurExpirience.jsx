@@ -9,7 +9,8 @@ const OurExpirience = () => {
       description:
         "The RamTech dev team developed a comprehensive website system for the UTM party.",
       logos: ["/UTM.png"],
-      link: "https://utm-website-eight.vercel.app"
+      link: "https://utm-website-eight.vercel.app",
+      buttonText: "View Site"
     },
     {
       title: "Lost and Found",
@@ -41,7 +42,7 @@ const OurExpirience = () => {
         <meta property="og:title" content="RamTech Projects | Our Experience" />
         <meta
           property="og:description"
-          content="Explore the projects and programming lessons offered by RamTech, empowering youth with real-world digital skills."
+          content="Explore the projects and programming lessons offered by RamTech."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ram-tech.netlify.app/#portfolio" />
@@ -63,7 +64,7 @@ const OurExpirience = () => {
         {/* Sub text */}
         <p className="text-sm md:text-base text-gray-600 max-w-3xl mb-10 ml-4">
           Below are some of the projects and programming lessons that RamTech has
-          successfully delivered to empower students with practical digital skills.
+          delivered to empower students with practical digital skills.
         </p>
 
         {/* Cards */}
@@ -119,7 +120,7 @@ const OurExpirience = () => {
                   whileHover={{ scale: 1.12, backgroundColor: "#dc2626" }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  {project.buttonText}
+                  {project.buttonText || "View Site"}
                   <ArrowRight className="w-4 h-4" />
                 </motion.a>
               </div>
