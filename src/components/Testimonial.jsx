@@ -17,7 +17,7 @@ function Testimonial() {
       rating: 5,
       image: "ceo.jpg",
       text:
-        "I am the owner of TNT Collection. I employed the RamTech team to build a website for my business. They delivered on time and exactly as requested. Truly trustworthy developers."
+        " i am the owner of TNT collection. one of ramtech member with his friend, built a nice en-commerse website for my business. it was delivered in time"
     },
     {
       name: "Mwai Zamadunga",
