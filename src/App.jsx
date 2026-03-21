@@ -1,6 +1,7 @@
+import { useState, useEffect } from "react";
 import "./App.css";
 import { Helmet } from "react-helmet";
-
+import Preloader from "./components/Preloader";      // ← Make sure this import is correct
 import AboutUs from "./components/AboutUs";
 import HeaderHero from "./components/HeaderHero";
 import Services from "./components/Services";
@@ -11,6 +12,23 @@ import OurExpirience from "./components/OurExpirience";
 import Testimonial from "./components/Testimonial";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time (you can adjust this value)
+    // In real apps this could wait for critical assets or API calls
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 8000); // 1.4 seconds — feels smooth but not too long
+
+    // Optional: cleaner way (if you want to wait for window load + small buffer)
+    // window.addEventListener('load', () => {
+    //   setTimeout(() => setIsLoading(false), 800);
+    // });
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -21,10 +39,13 @@ function App() {
         />
         <meta name="keywords" content="RamTech, digital skills, youth, tech, coding, projects" />
         <meta name="author" content="RamTech Team" />
-        
+
         {/* Open Graph / Facebook */}
         <meta property="og:title" content="RamTech | Empowering Youth with Digital Skills" />
-        <meta property="og:description" content="RamTech is a youth-driven tech movement focused on building digital skills through lessons, projects, and practical tech solutions." />
+        <meta
+          property="og:description"
+          content="RamTech is a youth-driven tech movement focused on building digital skills through lessons, projects, and practical tech solutions."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ram-tech.netlify.app" />
         <meta property="og:image" content="https://ram-tech.netlify.app/ram.jpg" />
@@ -32,39 +53,48 @@ function App() {
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="RamTech | Empowering Youth with Digital Skills" />
-        <meta name="twitter:description" content="RamTech is a youth-driven tech movement focused on building digital skills through lessons, projects, and practical tech solutions." />
+        <meta
+          name="twitter:description"
+          content="RamTech is a youth-driven tech movement focused on building digital skills through lessons, projects, and practical tech solutions."
+        />
         <meta name="twitter:image" content="https://ram-tech.netlify.app/logo.ram.jpg" />
       </Helmet>
 
-      <section id="home">
-        <HeaderHero />
-      </section>
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <>
+          <section id="home">
+            <HeaderHero />
+          </section>
 
-      <section id="about">
-        <AboutUs />
-      </section>
+          <section id="about">
+            <AboutUs />
+          </section>
 
-      <section id="services">
-        <Services />
-      </section>
+          <section id="services">
+            <Services />
+          </section>
 
-      <section id="testimonials">
-        <Testimonial />
-      </section>
+          <section id="testimonials">
+            <Testimonial />
+          </section>
 
-      <section id="portfolio">
-        <OurExpirience />
-      </section>
+          <section id="portfolio">
+            <OurExpirience />
+          </section>
 
-      <section id="work">
-        <Works_With />
-      </section>
+          <section id="work">
+            <Works_With />
+          </section>
 
-      <section id="contact">
-        <Contact />
-      </section>
+          <section id="contact">
+            <Contact />
+          </section>
 
-      <Footer />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

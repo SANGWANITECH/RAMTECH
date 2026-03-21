@@ -12,6 +12,25 @@ const OurExpirience = () => {
       link: "https://utm-website-eight.vercel.app",
       buttonText: "View Site"
     },
+
+    {
+      title: "Faith School Website",
+      description:
+        "The RamTech dev team developed a comprehensive website for Faith High School.",
+      logos: ["/faith.jpg"],
+      link: "https://faith-secondary-school.netlify.app",
+      buttonText: "View Site"
+    },
+
+    {
+      title: "Chigomezgo School Website",
+      description:
+        "The RamTech dev team developed a comprehensive website for Chigomezyo High School.",
+      logos: ["/logo.png"],
+      link: "https://chigomezyo-pvt-school.vercel.app/",
+      buttonText: "View Site"
+    },
+
     {
       title: "Lost and Found",
       description:
@@ -20,10 +39,20 @@ const OurExpirience = () => {
       link: "#",
       buttonText: "Download App"
     },
+
+    {
+      title: "Car-Sale-website",
+      description:
+        "The RamTech dev team developed a comprehensive website for Selling cars.",
+      logos: ["/car.png"],
+      link: "https://car-sell-frontend.vercel.app",
+      buttonText: "View Site"
+    },
+
     {
       title: "Programming Tutorials",
       description:
-        "The RamTech team has been offering programming lessons in Java and web development to UNIMA students for over two years.",
+        "The RamTech team has been offering programming lessons to UNIMA students for over two years.",
       logos: [],
       link: "#",
       buttonText: "Check on our page",
