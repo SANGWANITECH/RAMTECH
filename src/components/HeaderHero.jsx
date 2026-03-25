@@ -21,6 +21,13 @@ const HeaderHero = () => {
         fontFamily: "'Orbitron', sans-serif"
       }}
     >
+      {/* ✅ Hidden SEO Image */}
+      <img
+        src={hero1}
+        alt="RamTech digital skills training and technology solutions"
+        className="hidden"
+      />
+
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/70 z-0" />
 
@@ -37,11 +44,11 @@ const HeaderHero = () => {
             <a href="#portfolio" className={navClass}>Projects</a>
           </nav>
 
-          {/* TEXT LOGO */}
+          {/* ✅ LOGO changed to h2 (no visual change) */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl md:text-2xl font-bold tracking-widest text-white">
+            <h2 className="text-xl md:text-2xl font-bold tracking-widest text-white">
               RAM<span className="text-red-600">TECH</span>
-            </h1>
+            </h2>
           </div>
 
           {/* Right nav */}
@@ -80,6 +87,13 @@ const HeaderHero = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-6">
+        
+        {/* ✅ Proper SEO H1 (hidden, no visual change) */}
+        <h1 className="hidden">
+          RamTech – Empowering Youth with Digital Skills in Malawi
+        </h1>
+
+        {/* ✅ Your ORIGINAL visible heading (unchanged) */}
         <motion.h1
           className="text-3xl md:text-6xl font-bold text-white uppercase"
           initial={{ opacity: 0, y: -20 }}

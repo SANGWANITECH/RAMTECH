@@ -17,28 +17,28 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 8000);
+    }, 1500); // Reduced from 8000ms → better UX + SEO
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
       <Helmet>
+        {/* Basic SEO */}
         <title>RamTech | Empowering Youth with Digital Skills</title>
         <meta
           name="description"
           content="RamTech is a youth-driven tech movement focused on building digital skills through lessons, projects, and practical tech solutions."
         />
-        <meta
-          name="keywords"
-          content="RamTech, ram tech, ramtech malawi, digital skills, youth tech, coding, tech projects, RamTech online"
-        />
         <meta name="author" content="RamTech Team" />
 
-        {/* Canonical URL */}
+        {/* Canonical */}
         <link rel="canonical" href="https://ram-techs.online" />
 
-        {/* Open Graph / Facebook */}
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+
+   
         <meta property="og:title" content="RamTech | Empowering Youth with Digital Skills" />
         <meta
           property="og:description"
@@ -55,7 +55,23 @@ function App() {
           name="twitter:description"
           content="RamTech is a youth-driven tech movement focused on building digital skills through lessons, projects, and practical tech solutions."
         />
-        <meta name="twitter:image" content="https://ram-techs.online/logo.ram.jpg" />
+        <meta name="twitter:image" content="https://ram-techs.online/ram.jpg" />
+
+      
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "RamTech",
+            "url": "https://ram-techs.online",
+            "logo": "https://ram-techs.online/ram.jpg",
+            "sameAs": [
+              "https://facebook.com/yourpage",
+              "https://twitter.com/yourhandle",
+              "https://linkedin.com/company/ramtech"
+            ]
+          })}
+        </script>
       </Helmet>
 
       {isLoading ? (
