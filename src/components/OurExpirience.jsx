@@ -86,29 +86,20 @@ const OurExpirience = () => {
     <div className="min-h-screen bg-white py-8 md:py-4 px-4">
       <Helmet>
         <title>RamTech Projects | Our Experience</title>
-
         <meta
           name="description"
           content="Explore the projects and programming lessons offered by RamTech, empowering youth with real-world digital skills."
         />
-
-        <meta
-          property="og:title"
-          content="RamTech Projects | Our Experience"
-        />
-
+        <meta property="og:title" content="RamTech Projects | Our Experience" />
         <meta
           property="og:description"
           content="Explore the projects and programming lessons offered by RamTech."
         />
-
         <meta property="og:type" content="website" />
-
         <meta
           property="og:url"
           content="https://ram-tech.netlify.app/#portfolio"
         />
-
         <meta
           property="og:image"
           content="https://ram-tech.netlify.app/ram.jpg"
@@ -119,7 +110,6 @@ const OurExpirience = () => {
         {/* Heading */}
         <div className="flex items-center gap-3 mb-3">
           <div className="w-1 h-10 bg-red-600" />
-
           <h1
             className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
@@ -139,28 +129,25 @@ const OurExpirience = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col h-[420px]"
             >
               {/* Image / Icon */}
-              <div className="bg-gray-100 h-48 flex items-center justify-center overflow-hidden">
+              <div className="bg-gray-100 h-48 flex items-center justify-center p-6">
                 {project.icon ? (
                   <div className="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center">
                     <Code className="w-10 h-10 text-white" />
                   </div>
-                ) : (
-                  project.logos.map((logo, i) => (
-                    <img
-                      key={i}
-                      src={logo}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                  ))
-                )}
+                ) : project.logos.length > 0 ? (
+                  <img
+                    src={project.logos[0]}
+                    alt={project.title}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                ) : null}
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1">
                 <h3
                   className="text-lg font-bold text-gray-900 mb-2"
                   style={{ fontFamily: "'Orbitron', sans-serif" }}
@@ -168,16 +155,16 @@ const OurExpirience = () => {
                   {project.title}
                 </h3>
 
-                <p className="text-sm text-gray-600 leading-relaxed mb-5">
+                <p className="text-sm text-gray-600 leading-relaxed mb-5 flex-1">
                   {project.description}
                 </p>
 
-                {/* Animated Button */}
+                {/* Button */}
                 <motion.a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-red-500 text-white font-medium py-3 px-4 rounded-lg flex items-center justify-center gap-2 text-sm md:text-base"
+                  className="w-full bg-red-500 text-white font-medium py-3 px-4 rounded-lg flex items-center justify-center gap-2 text-sm md:text-base mt-auto"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{
                     duration: 2,
@@ -191,7 +178,6 @@ const OurExpirience = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   {project.buttonText || "View Site"}
-
                   <ArrowRight className="w-4 h-4" />
                 </motion.a>
               </div>
