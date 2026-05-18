@@ -39,6 +39,15 @@ Private Secondary School",
       link: "https://chigomezyo-pvt-school.vercel.app/",
       buttonText: "View Site"
     },
+      {
+      title: "Touchless Computer control System",
+      description:
+        "The RamTech team developed Computer control System to help accesibilty issues",
+      logos: [],
+      link: "#",
+      buttonText: "Check on our page",
+      icon: true
+    },
 
     {
       title: "Lost and Found",
