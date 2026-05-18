@@ -21,7 +21,16 @@ const OurExpirience = () => {
       link: "https://faith-secondary-school.netlify.app",
       buttonText: "View Site"
     },
-
+  {
+      title: "Jam Park
+Private Secondary School",
+      description:
+        "The RamTech dev team developed a comprehensive website for Jam Park
+Private Secondary School",
+      logos: ["/faith.jpg"],
+      link: "https://www.jamparksecondaryschool.site/",
+      buttonText: "View Site"
+    },
     {
       title: "Chigomezgo School Website",
       description:
