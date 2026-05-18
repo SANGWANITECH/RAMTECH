@@ -10,7 +10,7 @@ const OurExpirience = () => {
         "The RamTech dev team developed a comprehensive website system for the UTM party.",
       logos: ["/UTM.png"],
       link: "https://utm-website-eight.vercel.app",
-      buttonText: "View Site"
+      buttonText: "View Site",
     },
 
     {
@@ -19,34 +19,38 @@ const OurExpirience = () => {
         "The RamTech dev team developed a comprehensive website for Faith High School.",
       logos: ["/faith.jpg"],
       link: "https://faith-secondary-school.netlify.app",
-      buttonText: "View Site"
+      buttonText: "View Site",
     },
-  {
-      title: "Jam Park
-Private Secondary School",
+
+    {
+      title: "Jam Park Private Secondary School",
       description:
-        "The RamTech dev team developed a comprehensive website for Jam Park
-Private Secondary School",
-      logos: ["/faith.jpg"],
+        "The RamTech dev team developed a comprehensive website for Jam Park Private Secondary School.",
+      logos: [
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
+      ],
       link: "https://www.jamparksecondaryschool.site/",
-      buttonText: "View Site"
+      buttonText: "View Site",
     },
+
     {
       title: "Chigomezgo School Website",
       description:
         "The RamTech dev team developed a comprehensive website for Chigomezyo High School.",
       logos: ["/logo.png"],
       link: "https://chigomezyo-pvt-school.vercel.app/",
-      buttonText: "View Site"
+      buttonText: "View Site",
     },
-      {
-      title: "Touchless Computer control System",
+
+    {
+      title: "Touchless Computer Control System",
       description:
-        "The RamTech team developed Computer control System to help accesibilty issues",
-      logos: [],
+        "The RamTech team developed a touchless computer control system to help improve accessibility and hands-free interaction.",
+      logos: [
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+      ],
       link: "#",
       buttonText: "Check on our page",
-      icon: true
     },
 
     {
@@ -55,16 +59,16 @@ Private Secondary School",
         "The RamTech team built a Lost and Found application where students can report and access lost items.",
       logos: ["/lost.png"],
       link: "#",
-      buttonText: "Download App"
+      buttonText: "Download App",
     },
 
     {
-      title: "Car-Sale-website",
+      title: "Car Sale Website",
       description:
-        "The RamTech dev team developed a comprehensive website for Selling cars.",
+        "The RamTech dev team developed a comprehensive website for selling cars.",
       logos: ["/car.png"],
       link: "https://car-sell-frontend.vercel.app",
-      buttonText: "View Site"
+      buttonText: "View Site",
     },
 
     {
@@ -74,32 +78,48 @@ Private Secondary School",
       logos: [],
       link: "#",
       buttonText: "Check on our page",
-      icon: true
-    }
+      icon: true,
+    },
   ];
 
   return (
     <div className="min-h-screen bg-white py-8 md:py-4 px-4">
       <Helmet>
         <title>RamTech Projects | Our Experience</title>
+
         <meta
           name="description"
           content="Explore the projects and programming lessons offered by RamTech, empowering youth with real-world digital skills."
         />
-        <meta property="og:title" content="RamTech Projects | Our Experience" />
+
+        <meta
+          property="og:title"
+          content="RamTech Projects | Our Experience"
+        />
+
         <meta
           property="og:description"
           content="Explore the projects and programming lessons offered by RamTech."
         />
+
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ram-tech.netlify.app/#portfolio" />
-        <meta property="og:image" content="https://ram-tech.netlify.app/ram.jpg" />
+
+        <meta
+          property="og:url"
+          content="https://ram-tech.netlify.app/#portfolio"
+        />
+
+        <meta
+          property="og:image"
+          content="https://ram-tech.netlify.app/ram.jpg"
+        />
       </Helmet>
 
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="flex items-center gap-3 mb-3">
           <div className="w-1 h-10 bg-red-600" />
+
           <h1
             className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
@@ -110,8 +130,8 @@ Private Secondary School",
 
         {/* Sub text */}
         <p className="text-sm md:text-base text-gray-600 max-w-3xl mb-10 ml-4">
-          Below are some of the projects and programming lessons that RamTech has
-          delivered to empower students with practical digital skills.
+          Below are some of the projects and programming lessons that RamTech
+          has delivered to empower students with practical digital skills.
         </p>
 
         {/* Cards */}
@@ -119,26 +139,22 @@ Private Secondary School",
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100"
             >
               {/* Image / Icon */}
-              <div className="bg-gray-200 h-40 md:h-48 flex items-center justify-center p-4">
+              <div className="bg-gray-100 h-48 flex items-center justify-center overflow-hidden">
                 {project.icon ? (
                   <div className="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center">
                     <Code className="w-10 h-10 text-white" />
                   </div>
                 ) : (
                   project.logos.map((logo, i) => (
-                    <div
+                    <img
                       key={i}
-                      className="w-32 h-32 bg-white rounded-md flex items-center justify-center overflow-hidden"
-                    >
-                      <img
-                        src={logo}
-                        alt="Project logo"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
+                      src={logo}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
                   ))
                 )}
               </div>
@@ -163,11 +179,19 @@ Private Secondary School",
                   rel="noopener noreferrer"
                   className="w-full bg-red-500 text-white font-medium py-3 px-4 rounded-lg flex items-center justify-center gap-2 text-sm md:text-base"
                   animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  whileHover={{ scale: 1.12, backgroundColor: "#dc2626" }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  whileHover={{
+                    scale: 1.08,
+                    backgroundColor: "#dc2626",
+                  }}
                   whileTap={{ scale: 0.95 }}
                 >
                   {project.buttonText || "View Site"}
+
                   <ArrowRight className="w-4 h-4" />
                 </motion.a>
               </div>
