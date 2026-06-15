@@ -14,6 +14,27 @@ const OurExpirience = () => {
     },
 
     {
+      title: "Karonga Fc United website",
+      description:
+        "The RamTech dev team developed a comprehensive website system for Karonga Fc United.",
+      logos: ["/karonga.avif"],
+      link: "https://www.karongaunitedfc.online",
+      buttonText: "View Site",
+    },
+
+
+    {
+      title: "Jam Park School website",
+      description:
+        "The RamTech dev team developed a comprehensive website for Jam Park Private Secondary School.",
+      logos: [
+        "/jam.png",
+      ],
+      link: "https://www.jamparksecondaryschool.site/",
+      buttonText: "View Site",
+    },
+
+    {
       title: "Faith School Website",
       description:
         "The RamTech dev team developed a comprehensive website for Faith High School.",
@@ -21,18 +42,6 @@ const OurExpirience = () => {
       link: "https://faith-secondary-school.netlify.app",
       buttonText: "View Site",
     },
-
-    {
-      title: "Jam Park Private Secondary School",
-      description:
-        "The RamTech dev team developed a comprehensive website for Jam Park Private Secondary School.",
-      logos: [
-        "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
-      ],
-      link: "https://www.jamparksecondaryschool.site/",
-      buttonText: "View Site",
-    },
-
     {
       title: "Chigomezgo School Website",
       description:
@@ -45,7 +54,7 @@ const OurExpirience = () => {
     {
       title: "Touchless Computer Control System",
       description:
-        "The RamTech team developed a touchless computer control system to help improve accessibility and hands-free interaction.",
+        "The RamTech team developed a touchless computer control system to help improve accessibility.",
       logos: [
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
       ],
