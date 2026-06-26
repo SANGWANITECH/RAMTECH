@@ -5,30 +5,6 @@ import { Helmet } from "react-helmet";
 const OurExpirience = () => {
   const projects = [
     {
-      title: "SSPDS — Smart Surveillance System",
-      description:
-        "AI-powered surveillance platform for real-time face recognition across multiple camera feeds. Built for Malawi Police Service. Detects persons of interest and sends instant alerts with evidence snapshots.",
-      logos: ["https://cdn-icons-png.flaticon.com/512/2942/2942909.png"],
-      link: "https://github.com/SANGWANITECH/sspds",
-      buttonText: "View on GitHub",
-    },
-    {
-      title: "ERBM — Exchange Rate Intelligence Dashboard",
-      description:
-        "Financial intelligence system for the Reserve Bank of Malawi. Aggregates live MWK exchange rates across 10 currencies, calculates volatility, detects anomalies, and fires automated alerts.",
-      logos: ["https://cdn-icons-png.flaticon.com/512/2910/2910768.png"],
-      link: "https://github.com/SANGWANITECH/erbm",
-      buttonText: "View on GitHub",
-    },
-    {
-      title: "Mphatso Motel Website",
-      description:
-        "Professional hospitality website for Mphatso Motel built with Next.js 15. Features room listings, gallery, WhatsApp booking integration, and SEO optimization.",
-      logos: ["https://cdn-icons-png.flaticon.com/512/235/235861.png"],
-      link: "https://mphatso-motel.vercel.app",
-      buttonText: "View Site",
-    },
-    {
       title: "The UTM Website",
       description:
         "The RamTech dev team developed a comprehensive website system for the UTM party.",
@@ -45,12 +21,36 @@ const OurExpirience = () => {
       buttonText: "View Site",
     },
     {
+      title: "Mphatso Motel Website",
+      description:
+        "The RamTech dev team developed a professional hospitality website for Mphatso Motel with room listings, gallery, and WhatsApp booking.",
+      logos: ["https://cdn-icons-png.flaticon.com/512/235/235861.png"],
+      link: "https://mphatso-motel.vercel.app",
+      buttonText: "View Site",
+    },
+    {
       title: "Jam Park School Website",
       description:
         "The RamTech dev team developed a comprehensive website for Jam Park Private Secondary School.",
       logos: ["/jam.png"],
       link: "https://www.jamparksecondaryschool.site/",
       buttonText: "View Site",
+    },
+    {
+      title: "SSPDS — Smart Surveillance System",
+      description:
+        "The RamTech team built an AI-powered surveillance system for the Malawi Police Service with real-time face recognition and instant alerts.",
+      logos: ["https://cdn-icons-png.flaticon.com/512/2942/2942909.png"],
+      link: "https://github.com/SANGWANITECH/sspds",
+      buttonText: "View on GitHub",
+    },
+    {
+      title: "ERBM — Exchange Rate Dashboard",
+      description:
+        "The RamTech team built a financial intelligence dashboard for the Reserve Bank of Malawi tracking live MWK exchange rates and anomalies.",
+      logos: ["https://cdn-icons-png.flaticon.com/512/2910/2910768.png"],
+      link: "https://github.com/SANGWANITECH/erbm",
+      buttonText: "View on GitHub",
     },
     {
       title: "Faith School Website",
@@ -130,7 +130,6 @@ const OurExpirience = () => {
       </Helmet>
 
       <div className="max-w-7xl mx-auto">
-        {/* Heading */}
         <div className="flex items-center gap-3 mb-3">
           <div className="w-1 h-10 bg-red-600" />
           <h1
@@ -141,21 +140,18 @@ const OurExpirience = () => {
           </h1>
         </div>
 
-        {/* Sub text */}
         <p className="text-sm md:text-base text-gray-600 max-w-3xl mb-10 ml-4">
           Below are some of the projects and programming lessons that RamTech
           has delivered to empower students with practical digital skills.
         </p>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col h-[420px]"
+              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col"
             >
-              {/* Image / Icon */}
-              <div className="bg-gray-100 h-48 flex items-center justify-center p-6">
+              <div className="bg-gray-100 h-48 flex items-center justify-center p-6 flex-shrink-0">
                 {project.icon ? (
                   <div className="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center">
                     <Code className="w-10 h-10 text-white" />
@@ -169,7 +165,6 @@ const OurExpirience = () => {
                 ) : null}
               </div>
 
-              {/* Content */}
               <div className="p-6 flex flex-col flex-1">
                 <h3
                   className="text-lg font-bold text-gray-900 mb-2"
@@ -182,7 +177,6 @@ const OurExpirience = () => {
                   {project.description}
                 </p>
 
-                {/* Button */}
                 <motion.a
                   href={project.link}
                   target="_blank"
