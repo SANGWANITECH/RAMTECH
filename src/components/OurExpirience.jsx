@@ -5,6 +5,30 @@ import { Helmet } from "react-helmet";
 const OurExpirience = () => {
   const projects = [
     {
+      title: "SSPDS — Smart Surveillance System",
+      description:
+        "AI-powered surveillance platform for real-time face recognition across multiple camera feeds. Built for Malawi Police Service. Detects persons of interest and sends instant alerts with evidence snapshots.",
+      logos: ["https://cdn-icons-png.flaticon.com/512/2942/2942909.png"],
+      link: "https://github.com/SANGWANITECH/sspds",
+      buttonText: "View on GitHub",
+    },
+    {
+      title: "ERBM — Exchange Rate Intelligence Dashboard",
+      description:
+        "Financial intelligence system for the Reserve Bank of Malawi. Aggregates live MWK exchange rates across 10 currencies, calculates volatility, detects anomalies, and fires automated alerts.",
+      logos: ["https://cdn-icons-png.flaticon.com/512/2910/2910768.png"],
+      link: "https://github.com/SANGWANITECH/erbm",
+      buttonText: "View on GitHub",
+    },
+    {
+      title: "Mphatso Motel Website",
+      description:
+        "Professional hospitality website for Mphatso Motel built with Next.js 15. Features room listings, gallery, WhatsApp booking integration, and SEO optimization.",
+      logos: ["https://cdn-icons-png.flaticon.com/512/235/235861.png"],
+      link: "https://mphatso-motel.vercel.app",
+      buttonText: "View Site",
+    },
+    {
       title: "The UTM Website",
       description:
         "The RamTech dev team developed a comprehensive website system for the UTM party.",
@@ -12,28 +36,22 @@ const OurExpirience = () => {
       link: "https://utm-website-eight.vercel.app",
       buttonText: "View Site",
     },
-
     {
-      title: "Karonga Fc United website",
+      title: "Karonga FC United Website",
       description:
-        "The RamTech dev team developed a comprehensive website system for Karonga Fc United.",
+        "The RamTech dev team developed a comprehensive website system for Karonga FC United.",
       logos: ["/karonga.avif"],
       link: "https://www.karongaunitedfc.online",
       buttonText: "View Site",
     },
-
-
     {
-      title: "Jam Park School website",
+      title: "Jam Park School Website",
       description:
         "The RamTech dev team developed a comprehensive website for Jam Park Private Secondary School.",
-      logos: [
-        "/jam.png",
-      ],
+      logos: ["/jam.png"],
       link: "https://www.jamparksecondaryschool.site/",
       buttonText: "View Site",
     },
-
     {
       title: "Faith School Website",
       description:
@@ -50,7 +68,6 @@ const OurExpirience = () => {
       link: "https://chigomezyo-pvt-school.vercel.app/",
       buttonText: "View Site",
     },
-
     {
       title: "Touchless Computer Control System",
       description:
@@ -61,7 +78,6 @@ const OurExpirience = () => {
       link: "#",
       buttonText: "Check on our page",
     },
-
     {
       title: "Lost and Found",
       description:
@@ -70,7 +86,6 @@ const OurExpirience = () => {
       link: "#",
       buttonText: "Download App",
     },
-
     {
       title: "Car Sale Website",
       description:
@@ -79,7 +94,6 @@ const OurExpirience = () => {
       link: "https://car-sell-frontend.vercel.app",
       buttonText: "View Site",
     },
-
     {
       title: "Programming Tutorials",
       description:
