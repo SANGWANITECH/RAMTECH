@@ -21,14 +21,14 @@ const OurExpirience = () => {
       buttonText: "View Site",
     },
     {
-      title: "Mphatso Motel Website",
+      title: "IFE org. website",
       description:
-        "The RamTech dev team developed a professional hospitality website for Mphatso Motel with room listings, gallery, and WhatsApp booking.",
-      logos: ["https://cdn-icons-png.flaticon.com/512/235/235861.png"],
-      link: "https://mphatso-motel.vercel.app",
+        "The RamTech dev team developed a comprehensive website system for Immunization for Everyone-IFE",
+      logos: ["/logo-full.png"],
+      link: "https://ife-website.netlify.app/",
       buttonText: "View Site",
     },
-    {
+      {
       title: "Jam Park School Website",
       description:
         "The RamTech dev team developed a comprehensive website for Jam Park Private Secondary School.",
@@ -36,6 +36,15 @@ const OurExpirience = () => {
       link: "https://www.jamparksecondaryschool.site/",
       buttonText: "View Site",
     },
+    {
+      title: "Mphatso Motel Website",
+      description:
+        "The RamTech dev team developed a professional hospitality website for Mphatso Motel with room listings, gallery, and WhatsApp booking.",
+      logos: ["https://cdn-icons-png.flaticon.com/512/235/235861.png"],
+      link: "https://mphatso-motel.vercel.app",
+      buttonText: "View Site",
+    },
+  
     {
       title: "SSPDS — Smart Surveillance System",
       description:
