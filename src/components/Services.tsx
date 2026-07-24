@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLaptopCode, FaBrain, FaPaintBrush, FaMobileAlt, FaWindows, FaTools } from "react-icons/fa";
+import { FaLaptopCode, FaBrain, FaMobileAlt, FaPaintBrush, FaWindows, FaTools } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 type Service = {
@@ -9,41 +9,44 @@ type Service = {
   icon: React.ReactNode;
 };
 
-const SERVICES: Service[] = [
+const DEVELOPMENT_SERVICES: Service[] = [
   {
     key: "web-dev",
     title: "Web Development",
-    desc: "Custom responsive websites and progressive web apps using modern stacks (React, Next, or static sites). We focus on performance, accessibility and real-world UX.",
+    desc: "Custom responsive websites and progressive web apps using modern stacks such as React and Next. Built for performance, accessibility, and real world use.",
     icon: <FaLaptopCode size={22} />
   },
   {
     key: "ai",
     title: "AI Integration",
-    desc: "Integrate AI-powered features into your products — chatbots, data-driven recommendations, and automation to scale workflows and improve decision making.",
+    desc: "AI powered features for your product: chatbots, data driven recommendations, and automation that removes manual work from a team's daily workflow.",
     icon: <FaBrain size={22} />
   },
   {
+    key: "mobile",
+    title: "Mobile App Development",
+    desc: "Cross platform mobile apps built with Flutter or React Native, with fast prototyping and native feeling performance on Android and iOS.",
+    icon: <FaMobileAlt size={22} />
+  }
+];
+
+const SUPPORT_SERVICES: Service[] = [
+  {
     key: "graphic",
     title: "Graphic Design",
-    desc: "Branding, UI/UX assets, and marketing graphics crafted to communicate clearly and look professional across print and digital channels.",
+    desc: "Branding, UI and UX assets, and marketing graphics that communicate clearly and look professional across print and digital channels.",
     icon: <FaPaintBrush size={22} />
-  },
-  {
-    key: "mobile",
-    title: "Mobile App Dev",
-    desc: "Cross-platform mobile apps built with Flutter or React Native — fast prototyping, native-like performance and smooth UX for Android & iOS.",
-    icon: <FaMobileAlt size={22} />
   },
   {
     key: "windows",
     title: "Windows Installation",
-    desc: "Reliable OS setup and configuration for desktops and laptops — installations, drivers, system tuning and secure baseline configuration.",
+    desc: "OS setup and configuration for desktops and laptops: installations, drivers, system tuning, and secure baseline configuration.",
     icon: <FaWindows size={22} />
   },
   {
     key: "hardware",
-    title: "Physical PC Problems",
-    desc: "Hardware troubleshooting and repairs: diagnostics, component replacement and optimization so your systems stay productive and reliable.",
+    title: "Hardware Troubleshooting",
+    desc: "Diagnostics, component replacement, and optimization to keep desktops and laptops productive and reliable.",
     icon: <FaTools size={22} />
   }
 ];
@@ -52,29 +55,64 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 }
+    transition: { staggerChildren: 0.12 }
   }
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.5, ease: "easeOut" }
   }
 };
 
-const iconVariants = {
-  animate: {
-    y: [0, -6, 0],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
-};
+function ServiceGrid({ services }: { services: Service[] }) {
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      {services.map((s) => (
+        <motion.article
+          key={s.key}
+          id={s.key}
+          variants={cardVariants}
+          whileHover={{ y: -4 }}
+          className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition scroll-mt-28"
+        >
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-red-50 text-red-600 inline-flex items-center justify-center border border-red-100">
+              {s.icon}
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900">
+              {s.title}
+            </h3>
+          </div>
+
+          <p
+            className="text-sm text-gray-600 mb-4 leading-relaxed"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            {s.desc}
+          </p>
+
+          <a
+            href={`#${s.key}`}
+            className="inline-block px-4 py-2 rounded-full border border-red-100 text-sm text-red-600 hover:bg-red-50 transition"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            Read More
+          </a>
+        </motion.article>
+      ))}
+    </motion.div>
+  );
+}
 
 const Services: React.FC = () => {
   return (
@@ -87,61 +125,31 @@ const Services: React.FC = () => {
         <div className="flex items-start gap-6 mb-12">
           <div className="w-2 h-12 bg-red-600 rounded" />
           <div>
-            <h2 className="text-3xl font-bold text-gray-900">Our Best Services</h2>
+            <h2 className="text-3xl font-bold text-gray-900">What We Build and Support</h2>
             <p
               className="text-gray-600 max-w-xl mt-2 leading-relaxed"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              We provide the best services and our customers witness the magic in plain sight.
-              Let’s change the world together.
+              Software and AI systems for institutions, plus hands on support for the devices that keep a team running.
             </p>
           </div>
         </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        <p
+          className="text-xs uppercase tracking-widest text-gray-400 mb-4"
+          style={{ fontFamily: "'Courier New', monospace" }}
         >
-          {SERVICES.map((s) => (
-            <motion.article
-              key={s.key}
-              variants={cardVariants}
-              className="bg-white border rounded-2xl p-6 shadow-sm hover:shadow-lg transition"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <motion.div
-                  variants={iconVariants}
-                  animate="animate"
-                  className="w-12 h-12 rounded-xl bg-red-50 text-red-600 inline-flex items-center justify-center border border-red-100"
-                >
-                  {s.icon}
-                </motion.div>
+          Development
+        </p>
+        <ServiceGrid services={DEVELOPMENT_SERVICES} />
 
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {s.title}
-                </h3>
-              </div>
-
-              <p
-                className="text-sm text-gray-600 mb-4 leading-relaxed"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                {s.desc}
-              </p>
-
-              <a
-                href={`#${s.key}`}
-                className="inline-block px-4 py-2 rounded-full border border-red-100 text-sm text-red-600 hover:bg-red-50 transition"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                Read More
-              </a>
-            </motion.article>
-          ))}
-        </motion.div>
+        <p
+          className="text-xs uppercase tracking-widest text-gray-400 mt-14 mb-4"
+          style={{ fontFamily: "'Courier New', monospace" }}
+        >
+          Design and Device Support
+        </p>
+        <ServiceGrid services={SUPPORT_SERVICES} />
       </div>
     </section>
   );

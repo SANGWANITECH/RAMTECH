@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { ArrowRight, Star, X } from "lucide-react";
 
-function Testimonial() {
-  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
+type TestimonialItem = {
+  name: string;
+  rating: number;
+  image: string;
+  text: string;
+};
 
-  const testimonials = [
+function Testimonial() {
+  const [selectedTestimonial, setSelectedTestimonial] = useState<TestimonialItem | null>(null);
+
+  const testimonials: TestimonialItem[] = [
     {
-      name: "Leilah khonje",
+      name: "Leilah Khonje",
       rating: 5,
       image: "leilah.jpg",
       text:
@@ -17,13 +24,12 @@ function Testimonial() {
       rating: 5,
       image: "ceo.jpg",
       text:
-        " i am the owner of TNT collection. one of ramtech member with his friend, built a nice en-commerse website for my business. it was delivered in time"
+        "I am the owner of TNT Collection. A RamTech member and a friend built a solid e-commerce website for my business, and delivered it on time."
     },
     {
       name: "Mwai Zamadunga",
       rating: 5,
-      image:
-        "mwa.jpg",
+      image: "mwa.jpg",
       text:
         "I am a student at the University of Malawi. I had no programming knowledge until RamTech offered coding lessons. The sessions completely transformed my skills."
     }
@@ -39,7 +45,6 @@ function Testimonial() {
     >
       <div className="relative z-10 px-4 py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 md:mb-12">
             <div className="mb-6 md:mb-0">
               <div className="flex items-center gap-3 mb-3">
@@ -65,7 +70,6 @@ function Testimonial() {
             </button>
           </div>
 
-          {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
             {testimonials.map((testimonial, index) => (
               <div
@@ -108,11 +112,9 @@ function Testimonial() {
         </div>
       </div>
 
-      {/* Image Modal */}
       {selectedTestimonial && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
           <div className="relative bg-gray-900 rounded-2xl max-w-md w-full p-6 border border-gray-700">
-            {/* Close Button */}
             <button
               onClick={() => setSelectedTestimonial(null)}
               className="absolute top-3 right-3 text-gray-400 hover:text-white"
@@ -120,7 +122,6 @@ function Testimonial() {
               <X size={22} />
             </button>
 
-            {/* Image */}
             <div className="w-full h-72 rounded-xl overflow-hidden mb-4">
               <img
                 src={selectedTestimonial.image}
@@ -129,7 +130,6 @@ function Testimonial() {
               />
             </div>
 
-            {/* Name */}
             <h3 className="text-white text-lg font-semibold text-center">
               {selectedTestimonial.name}
             </h3>
